@@ -1,0 +1,1735 @@
+Attribute VB_Name = "Module11"
+Sub print_disable()
+Attribute print_disable.VB_ProcData.VB_Invoke_Func = "p\n14"
+'
+' print_disable Macro
+'
+' Keyboard Shortcut: Ctrl+p
+'
+End Sub
+Sub ANY_REPORT()
+Attribute ANY_REPORT.VB_ProcData.VB_Invoke_Func = " \n14"
+'
+' ANY_REPORT Macro
+'
+
+'
+Application.DisplayAlerts = False
+  Application.ScreenUpdating = False
+  
+  Call CreateFolder
+ActiveSheet.Unprotect
+    ActiveSheet.Unprotect Sheets("PATIENT DATA").Select
+ Set lo = Sheet2.ListObjects("table1")
+    lo.AutoFilter.ShowAllData
+    
+    Call sampleid
+    
+    Sheets("PATIENT DATA").Select
+    Range("Table1[[#Headers],[Date]]").Select
+    Selection.End(xlDown).Select
+    ActiveCell.Offset(1, 0).Range("A1").Select
+    Sheets("ANY REPORT").Select
+    ActiveWindow.SmallScroll down:=-6
+    Range("c15:f15").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("ANY REPORT").Select
+    Range("I14").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    
+   
+    
+    Sheets("ANY REPORT").Select
+    Range("B12:D12").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("ANY REPORT").Select
+    Range("B13:D13").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("ANY REPORT").Select
+    Range("B19").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+    Selection.ClearFormats
+    
+     Call sampleidupdate
+        
+    ActiveCell.Offset(0, 1).Range("A1").Select
+   '' Selection.Paste
+    ActiveCell.Offset(0, 64).Range("A1").Select
+   
+   ''Call sampleid
+   
+   Sheets("ANY REPORT").Select
+    ActiveWindow.SmallScroll down:=6
+    Range("B18:E38").Select
+    
+    Selection.ColumnDifferences(ActiveCell).Select
+    'Columns("B").ColumnDifferences(Range("b20")).Select
+    '    Selection.SpecialCells(xlCellTypeConstants, 23).Select
+   ' Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteAll, Operation:=xlNone, SkipBlanks:= _
+        False, Transpose:=True
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    
+    Range("Table1[[#Headers],[Date]]").Select
+    Selection.End(xlDown).Select
+    ActiveCell.Offset(1, 0).Range("A1").Select
+    Sheets("ANY REPORT").Select
+    ActiveWindow.SmallScroll down:=-6
+    Range("E15:G15").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("ANY REPORT").Select
+    Range("I14").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("ANY REPORT").Select
+    Range("B12:D12").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("ANY REPORT").Select
+    Range("B13:D13").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("ANY REPORT").Select
+    Range("B19").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+    Selection.ClearFormats
+    
+    Call sampleidupdate
+    
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    ActiveCell.Offset(0, 64).Range("A1").Select
+    
+    
+    
+    Sheets("ANY REPORT").Select
+    ActiveCell.Offset(8, 5).Range("A1").Select
+    Application.CutCopyMode = False
+    
+      Dim path As String
+path = "C:\Users\ManiKandan\Desktop\New folder\clinic\reports\"
+
+Dim regno As String
+regno = Range("i14")
+
+Dim filename1 As String
+filename1 = regno & "-" & Range("b12").Text & "-" & Range("C19")
+Application.DisplayAlerts = False
+ActiveSheet.Copy
+
+'ActiveSheet.Shapes("commandbutton1").Delete
+'pdf
+'ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+'xlsx
+Application.DisplayAlerts = False
+
+With ActiveWorkbook
+   '.SaveAs Filename:=path & filename1 & ".xlsx", FileFormat:=51
+   ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+
+   .Close
+End With
+'MsgBox "your next document no " & regno + 1
+'Range("i13") = regno + 1
+ThisWorkbook.SAVE
+ ActiveSheet.Protect DrawingObjects:=True, Contents:=True, Scenarios:=True
+  
+   Call PRINT_COMMAN
+   
+End Sub
+
+
+Sub PRINT_COMMAN()
+ActiveWorkbook.ActiveSheet.PrintOut FROM:=1, TO:=1, COPIES:=1, COLLATE:=False, PREVIEW:=False
+End Sub
+
+
+Sub Filter_regno()
+Range("E7").AutoFilter field:=3, Criteria1:=Range("i2")
+'Range("E7").AutoFilter field:=6, Criteria1:=Range("d4").Value
+'Range("E7").AutoFilter field:=3, Criteria1:=Range("E3").Value
+End Sub
+
+Sub Filter_testname()
+Range("e7").AutoFilter field:=3, Criteria1:=Range("E4").Value
+End Sub
+
+Sub PasteasValue()
+
+Selection.SpecialCells(xlCellTypeVisible).Select
+
+Selection.PasteSpecial Paste:=xlPasteValues
+
+End Sub
+
+Private Sub Workbook_BeforeClose(Cancel As Boolean)
+Application.DisplayAlerts = False
+ThisWorkbook.Close SaveChanges:=True
+Application.DisplayAlerts = True
+End Sub
+
+Sub regup()
+'
+' regup Macro
+'
+
+'
+    ActiveSheet.Protect DrawingObjects:=True, Contents:=True, Scenarios:=True
+    ActiveSheet.Unprotect
+    Sheets("PATIENT DATA").Select
+    Range("Table1[[#Headers],[Reg.No]]").Select
+    Selection.End(xlDown).Select
+    Selection.Copy
+    Sheets("NAME").Select
+    Range("E4").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    With Selection.Font
+        .ThemeColor = xlThemeColorAccent2
+        .TintAndShade = 0.799981688894314
+    End With
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternThemeColor = xlThemeColorAccent1
+        .ThemeColor = xlThemeColorAccent2
+        .TintAndShade = 0.799981688894314
+        .PatternTintAndShade = 0.799981688894314
+    End With
+    Range("E4").Select
+    Selection.ClearFormats
+    With Selection.Font
+        .ThemeColor = xlThemeColorAccent2
+        .TintAndShade = 0.799981688894314
+    End With
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .ThemeColor = xlThemeColorAccent2
+        .TintAndShade = 0.799981688894314
+        .PatternTintAndShade = 0
+        ActiveSheet.Protect DrawingObjects:=True, Contents:=True, Scenarios:=True
+    End With
+End Sub
+
+
+Sub protect_NAME()
+Sheets("NAME").Select
+ActiveSheet.Protect DrawingObjects:=True, Contents:=True, Scenarios:=True
+End Sub
+
+Private Sub CommandButton1_Click()
+Dim path As String
+path = "C:\Users\ManiKandan\Desktop\New folder\clinic\reports\"
+
+Dim regno As String
+regno = Range("i14")
+
+Dim filename1 As String
+filename1 = regno & "-" & Range("b12").Text
+Application.DisplayAlerts = False
+ActiveSheet.Copy
+
+ActiveSheet.Shapes("commandbutton1").Delete
+'pdf
+ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+'xlsx
+Application.DisplayAlerts = False
+
+With ActiveWorkbook
+   .SaveAs Filename:=path & filename1 & ".xlsx", FileFormat:=51
+   .Close
+End With
+'MsgBox "your next document no " & regno + 1
+Range("i13") = regno + 1
+ThisWorkbook.SAVE
+
+Application.DisplayAlerts = True
+End Sub
+
+
+Sub BILL_NO()
+'
+' BILL_NO Macro
+'
+
+'
+    Range("E3").Select
+    ActiveCell.FormulaR1C1 = ""
+    Sheets("BILL").Select
+    Range("I14").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Range("E3").Select
+    ActiveSheet.Paste
+    Sheets("BILL").Select
+End Sub
+
+Sub BILLDATA()
+'
+' BILLDATA Macro
+'
+
+'
+    Sheets("PATIENT DATA").Select
+    Range("Table1[[#Headers],[NAME]]").Select
+    Selection.End(xlDown).Select
+    Range("H192:I192").Select
+    Selection.Copy
+    Sheets("BILL").Select
+    Selection.PasteSpecial Paste:=xlPasteAll, Operation:=xlNone, SkipBlanks:= _
+        False, Transpose:=True
+    Range("B17").Select
+End Sub
+
+Sub dateupdate()
+'
+' dateupdate Macro
+'
+' Keyboard Shortcut: Ctrl+a
+ActiveSheet.Protect DrawingObjects:=True, Contents:=True, Scenarios:=True
+    ActiveSheet.Unprotect
+    Selection.Copy
+    Range("B3").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = ""
+    Range("E3").Select
+    Selection.Copy
+    Range("B3").Select
+    Selection.PasteSpecial Paste:=xlPasteValuesAndNumberFormats, Operation:= _
+        xlNone, SkipBlanks:=False, Transpose:=False
+    Application.CutCopyMode = False
+    Selection.NumberFormat = "d mmmm yyyy-h:mm AM/PM"
+    Range("B3").Select
+    ActiveSheet.Protect DrawingObjects:=True, Contents:=True, Scenarios:=True
+End Sub
+
+
+Sub regnoupdate()
+
+Application.DisplayAlerts = False
+  Application.ScreenUpdating = False
+
+
+' regnoupdate Macro
+'call allowmacrowhenprotected()
+
+'Dim lo As ListObject
+  
+  'Set reference to the first Table on the sheet
+  Set lo = Sheet2.ListObjects(1)
+  
+  'Clear All Filters for entire Table
+  Call allowmacrowhenprotected
+  lo.AutoFilter.ShowAllData
+    Sheets("PATIENT DATA").Select
+    Range("G6").Select
+    Selection.End(xlDown).Select
+    Selection.Copy
+    Sheets("NAME").Select
+       Range("E4").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Range("F4").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "=RC[-1]+1"
+    Range("F4").Select
+    Selection.Copy
+    Range("B4").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+    ActiveSheet.Protect DrawingObjects:=True, Contents:=True, Scenarios:=True
+    
+End Sub
+
+Sub allowmacrowhenprotected()
+'ActiveSheet.Unprotect DrawingObjects:=True, Contents:=True, Scenarios:=True
+    ActiveSheet.Unprotect
+
+End Sub
+Sub cbc()
+
+' cbc Macro
+'
+' Keyboard Shortcut: Ctrl+i
+'
+  Application.DisplayAlerts = False
+  Application.ScreenUpdating = False
+  Call sampleid
+  
+  DoEvents
+  Application.StatusBar = "updating" & (I)
+  
+ Set lo = Sheet2.ListObjects("Table1")
+    lo.AutoFilter.ShowAllData
+    Sheets("PATIENT DATA").Select
+    ActiveSheet.Unprotect
+    Range("F6").Select
+    Selection.End(xlDown).Select
+    ActiveCell.Offset(1, 0).Range("A1").Select
+    Sheets("NAME").Select
+    Range("B3").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    ActiveSheet.Paste
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("CBC").Select
+    Range("I14").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("CBC").Select
+    Range("B12:D12").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("CBC").Select
+    Range("B13:D13").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("CBC").Select
+    Range("A19").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    ActiveSheet.Paste
+    Selection.Font.Bold = False
+    With Selection.Font
+        .Name = "Times New Roman"
+        .Size = 12
+        .Strikethrough = False
+        .Superscript = False
+        .Subscript = False
+        .OutlineFont = False
+        .Shadow = False
+        .Underline = xlUnderlineStyleNone
+        .Color = -16777216
+        .TintAndShade = 0
+        .ThemeFont = xlThemeFontNone
+    End With
+    With Selection.Font
+        .Name = "Calibri"
+        .Size = 12
+        .Strikethrough = False
+        .Superscript = False
+        .Subscript = False
+        .OutlineFont = False
+        .Shadow = False
+        .Underline = xlUnderlineStyleNone
+        .Color = -16777216
+        .TintAndShade = 0
+        .ThemeFont = xlThemeFontMinor
+    End With
+    ActiveCell.Offset(0, 4).Range("A1").Select
+    Sheets("CBC").Select
+    Range("E21:E34").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteAll, Operation:=xlNone, SkipBlanks:= _
+        False, Transpose:=True
+    ActiveCell.Offset(0, 14).Range("A1").Select
+    
+   Call sampleidupdate
+  
+    Sheets("CBC").Select
+    Application.CutCopyMode = False
+    ActiveCell.Offset(13, 0).Range("A1").Select
+    
+     Call HYPERLINK
+     Sheets("CBC").Select
+    Dim path As String
+path = "C:\Users\ManiKandan\Desktop\New folder\clinic\reports\"
+Dim regno As String
+regno = Range("i14")
+
+Dim filename1 As String
+filename1 = regno & "-" & Range("b12").Text & "-" & Range("A19")
+Application.DisplayAlerts = False
+ActiveSheet.Copy
+
+'ActiveSheet.Shapes("commandbutton").Delete
+'pdf
+'ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+'xlsx
+Application.DisplayAlerts = False
+
+With ActiveWorkbook
+  '.SaveAs Filename:=path & filename1 & ".xlsx", FileFormat:=51
+   ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+    .ReadOnlyRecommended = True
+   .Close
+End With
+'MsgBox "your next document no " & regno + 1
+'Range("i13") = regno + 1
+ThisWorkbook.SAVE
+
+
+Application.DisplayAlerts = True
+    
+Call PRINT_COMMAN
+End Sub
+Sub sampleidupdate()
+
+Sheets("PATIENT DATA").Select
+Range("P3").Select
+Selection.Copy
+Range("Table1[[#Headers],[Reg.No]]").Select
+Selection.End(xlDown).Select
+ActiveCell.Offset(0, 4).Range("A1").Select
+Selection.PasteSpecial Paste:=xlPasteValues
+''Sheets("cbc").Select
+
+End Sub
+
+Sub sampleid()
+Sheets("PATIENT DATA").Select
+    Range("Table1[[#Headers],[Reg.No]]").Select
+    Selection.End(xlDown).Select
+    ActiveCell.Offset(0, 4).Range("A1").Select
+    Selection.Copy
+    Range("Q3").Select
+    Selection.PasteSpecial Paste:=xlPasteValues
+    
+End Sub
+
+
+    
+Sub WIDAL()
+
+
+'
+' WIDAL Macro
+'
+' Keyboard Shortcut: Ctrl+Shift+W
+'
+  Application.DisplayAlerts = False
+  Application.ScreenUpdating = False
+  Call sampleid
+  Sheets("WIDAL").Select
+    Range("E15:G15").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Range("Table1[[#Headers],[Date]]").Select
+    Selection.End(xlDown).Select
+    ActiveCell.Offset(1, 0).Range("A1").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("WIDAL").Select
+    Range("I14").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Selection.NumberFormat = "General"
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("WIDAL").Select
+    Range("B12:D12").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("WIDAL").Select
+    Range("B13:D13").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("WIDAL").Select
+    Range("A19").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 18).Range("A1").Select
+    Sheets("WIDAL").Select
+    Range("E21").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("WIDAL").Select
+    Range("E23").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    
+    Call sampleidupdate
+     
+    Sheets("WIDAL").Select
+    Application.CutCopyMode = False
+    ActiveCell.Offset(6, 0).Range("A1").Select
+    
+    Call HYPERLINK
+   Sheets("WIDAL").Select
+       Dim path As String
+path = "file:///C:\Users\ManiKandan\Desktop\New folder\clinic\reports\"
+
+Dim regno As String
+regno = Range("i14")
+
+Dim filename1 As String
+filename1 = regno & "-" & Range("b12").Text & "-" & Range("A19")
+Application.DisplayAlerts = False
+
+ActiveSheet.Copy
+
+'ActiveSheet.Shapes("commandbutton1").Delete
+'pdf
+'ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+'xlsx
+Application.DisplayAlerts = False
+
+With ActiveWorkbook
+   '.SaveAs Filename:=path & filename1 & ".xlsx", FileFormat:=51
+   ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+
+   .Close
+End With
+'MsgBox "your next document no " & regno + 1
+'Range("i13") = regno + 1
+ThisWorkbook.SAVE
+
+Application.DisplayAlerts = True
+    Call PRINT_COMMAN
+End Sub
+
+Sub Rft()
+
+  Application.DisplayAlerts = False
+  Application.ScreenUpdating = False
+  Call sampleid
+'
+' Rft Macro
+'
+' Keyboard Shortcut: Ctrl+r
+Set lo = Sheet2.ListObjects("Table1")
+    lo.AutoFilter.ShowAllData '
+
+    Sheets("PATIENT DATA").Select
+    Range("F6").Select
+    Selection.End(xlDown).Select
+    ActiveCell.Offset(1, 0).Range("A1").Select
+    Sheets("NAME").Select
+    Range("B3").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    ActiveSheet.Paste
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("RFT").Select
+    Range("I14").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("RFT").Select
+    Range("B12:D12").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("RFT").Select
+    Range("B13:D13").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("RFT").Select
+    Range("A19").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    ActiveSheet.Paste
+    Selection.Font.Bold = False
+    ActiveCell.Offset(0, 20).Range("A1").Select
+    Sheets("RFT").Select
+    Range("E21:E23").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteAll, Operation:=xlNone, SkipBlanks:= _
+        False, Transpose:=True
+    ActiveCell.Offset(0, 3).Range("A1").Select
+    
+    Call sampleidupdate
+    
+    Sheets("RFT").Select
+    Application.CutCopyMode = False
+    ActiveCell.Offset(-2, 2).Range("A1").Select
+    
+    Dim path As String
+path = "C:\Users\ManiKandan\Desktop\New folder\clinic\reports\"
+
+Dim regno As String
+regno = Range("i14")
+
+Dim filename1 As String
+filename1 = regno & "-" & Range("b12").Text & "-" & Range("A19")
+Application.DisplayAlerts = False
+ActiveSheet.Copy
+
+'ActiveSheet.Shapes("commandbutton1").Delete
+'pdf
+'ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+'xlsx
+Application.DisplayAlerts = False
+
+With ActiveWorkbook
+   '.SaveAs Filename:=path & filename1 & ".xlsx", FileFormat:=51
+   ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+
+   .Close
+End With
+'MsgBox "your next document no " & regno + 1
+'Range("i13") = regno + 1
+ThisWorkbook.SAVE
+
+Application.DisplayAlerts = True
+    Sheets("RFT").Select
+    Call PRINT_COMMAN
+    
+End Sub
+Sub Lft()
+
+Application.DisplayAlerts = False
+  Application.ScreenUpdating = False
+  Call sampleid
+'
+' Lft Macro
+'
+' Keyboard Shortcut: Ctrl+l
+Set lo = Sheet2.ListObjects("Table1")
+    lo.AutoFilter.ShowAllData '
+
+    Sheets("PATIENT DATA").Select
+    ActiveWindow.ScrollColumn = 19
+    ActiveWindow.ScrollColumn = 18
+    ActiveWindow.ScrollColumn = 17
+    ActiveWindow.ScrollColumn = 16
+    ActiveWindow.ScrollColumn = 15
+    ActiveWindow.ScrollColumn = 14
+    ActiveWindow.ScrollColumn = 13
+    ActiveWindow.ScrollColumn = 12
+    ActiveWindow.ScrollColumn = 11
+    ActiveWindow.ScrollColumn = 10
+    ActiveWindow.ScrollColumn = 9
+    ActiveWindow.ScrollColumn = 8
+    ActiveWindow.ScrollColumn = 7
+    ActiveWindow.ScrollColumn = 6
+    Range("F6").Select
+    Selection.End(xlDown).Select
+    ActiveCell.Offset(1, 0).Range("A1").Select
+    Sheets("NAME").Select
+    Range("B3").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    ActiveSheet.Paste
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("LFT").Select
+    Range("I14").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("LFT").Select
+    Range("B12:D12").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("LFT").Select
+    Range("B13:D13").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("LFT").Select
+    Range("A19").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    ActiveSheet.Paste
+    Selection.Font.Bold = False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    ActiveCell.Offset(0, 22).Range("A1").Select
+    Sheets("LFT").Select
+    Range("G21:G29").Select
+    Selection.Copy
+    Range("E21:E29").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteAll, Operation:=xlNone, SkipBlanks:= _
+        False, Transpose:=True
+    ActiveCell.Offset(0, 10).Range("A1").Select
+    
+    Call sampleidupdate
+    
+    Sheets("LFT").Select
+    Application.CutCopyMode = False
+    ActiveCell.Offset(-2, 2).Range("A12").Select
+    
+    Dim path As String
+path = "C:\Users\ManiKandan\Desktop\New folder\clinic\reports\"
+
+Dim regno As String
+regno = Range("i14")
+
+Dim filename1 As String
+filename1 = regno & "-" & Range("b12").Text & "-" & Range("A19")
+Application.DisplayAlerts = False
+ActiveSheet.Copy
+
+'ActiveSheet.Shapes("commandbutton1").Delete
+'pdf
+'ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+'xlsx
+Application.DisplayAlerts = False
+
+With ActiveWorkbook
+   .SaveAs Filename:=path & filename1 & ".xlsx", FileFormat:=51
+   ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+
+   .Close
+End With
+'MsgBox "your next document no " & regno + 1
+'Range("i13") = regno + 1
+ThisWorkbook.SAVE
+    
+    Call PRINT_COMMAN
+End Sub
+Sub lipidprofile()
+
+Application.DisplayAlerts = False
+  Application.ScreenUpdating = False
+  Call sampleid
+'
+' lipidprofile Macro
+'
+' Keyboard Shortcut: Ctrl+d
+Set lo = Sheet2.ListObjects("Table1")
+    lo.AutoFilter.ShowAllData '
+
+    Sheets("PATIENT DATA").Select
+    Range("F6").Select
+    Selection.End(xlDown).Select
+    ActiveCell.Offset(1, 0).Range("A1").Select
+    Sheets("NAME").Select
+    Range("b3").Select
+    
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("LIPID").Select
+    
+    Range("I14").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("LIPID").Select
+    Range("B12:D12").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("LIPID").Select
+    Range("B13:D13").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("LIPID").Select
+    Range("A19").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    ActiveSheet.Paste
+    Selection.Font.Bold = False
+    ActiveCell.Offset(0, 32).Range("A1").Select
+    Sheets("LIPID").Select
+    Range("E21:E25").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteAll, Operation:=xlNone, SkipBlanks:= _
+        False, Transpose:=True
+    ActiveCell.Offset(0, 5).Range("A1").Select
+    Sheets("LIPID").Select
+    ActiveCell.Offset(5, 0).Range("A1").Select
+    Application.CutCopyMode = False
+    
+    Call sampleidupdate
+    
+    Worksheets("LIPID").Select
+    
+     Dim path As String
+path = "C:\Users\ManiKandan\Desktop\New folder\clinic\reports\"
+
+Dim regno As String
+regno = Range("i14")
+
+Dim filename1 As String
+filename1 = regno & "-" & Range("b12").Text & "-" & Range("A19")
+Application.DisplayAlerts = False
+ActiveSheet.Copy
+
+'ActiveSheet.Shapes("commandbutton1").Delete
+'pdf
+'ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+'xlsx
+Application.DisplayAlerts = False
+
+With ActiveWorkbook
+   '.SaveAs Filename:=path & filename1 & ".xlsx", FileFormat:=51
+   ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+
+   .Close
+End With
+'MsgBox "your next document no " & regno + 1
+'Range("i13") = regno + 1
+ThisWorkbook.SAVE
+    
+    Call PRINT_COMMAN
+End Sub
+Sub urineana()
+
+Application.DisplayAlerts = False
+  Application.ScreenUpdating = False
+  Call sampleid
+'
+' urineana Macro
+'
+' Keyboard Shortcut: Ctrl+u
+'
+    Set lo = Sheet2.ListObjects("table1")
+    lo.AutoFilter.ShowAllData
+    Sheets("PATIENT DATA").Select
+    Range("F6").Select
+    Selection.End(xlDown).Select
+    ActiveCell.Offset(1, 0).Range("A1").Select
+    Sheets("NAME").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    ActiveSheet.Paste
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("URINE ANALYSIS").Select
+    Range("I14").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("URINE ANALYSIS").Select
+    Range("B12:D12").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("URINE ANALYSIS").Select
+    Range("B13:D13").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("URINE ANALYSIS").Select
+    Range("A19").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Range("A19").Select
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 37).Range("A1").Select
+    ActiveWindow.ScrollRow = 10
+    ActiveWindow.ScrollRow = 9
+    ActiveWindow.ScrollRow = 8
+    ActiveWindow.ScrollRow = 7
+    ActiveWindow.ScrollRow = 6
+    ActiveWindow.ScrollRow = 5
+    ActiveWindow.ScrollRow = 4
+    ActiveWindow.ScrollRow = 5
+    ActiveWindow.ScrollRow = 6
+    ActiveWindow.ScrollRow = 7
+    ActiveWindow.ScrollRow = 8
+    ActiveWindow.ScrollRow = 9
+    ActiveWindow.ScrollRow = 10
+    ActiveWindow.ScrollRow = 11
+    Sheets("URINE ANALYSIS").Select
+    Range("E22:E39").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteAll, Operation:=xlNone, SkipBlanks:= _
+        False, Transpose:=True
+    ActiveCell.Offset(0, 18).Range("A1").Select
+    
+    Call sampleidupdate
+    
+    Sheets("URINE ANALYSIS").Select
+    ActiveCell.Offset(5, 0).Range("A14").Select
+    Application.CutCopyMode = False
+    
+        Dim path As String
+path = "C:\Users\ManiKandan\Desktop\New folder\clinic\reports\"
+
+Dim regno As String
+regno = Range("i14")
+
+Dim filename1 As String
+filename1 = regno & "-" & Range("b12").Text & "-" & Range("A19")
+Application.DisplayAlerts = False
+ActiveSheet.Copy
+
+'ActiveSheet.Shapes("commandbutton1").Delete
+'pdf
+'ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+'xlsx
+Application.DisplayAlerts = False
+
+With ActiveWorkbook
+   '.SaveAs Filename:=path & filename1 & ".xlsx", FileFormat:=51
+   
+   ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+   .Close
+End With
+'MsgBox "your next document no " & regno + 1
+'Range("i13") = regno + 1
+ThisWorkbook.SAVE
+    
+    Call PRINT_COMMAN
+End Sub
+
+
+Sub Clear_All_Filters_Range()
+
+  Dim lo As ListObject
+  
+  'Set reference to the first Table on the sheet
+  Set lo = Sheet2.ListObjects("Table1")
+  
+  
+  'Clear All Filters for entire Table
+ lo.AutoFilter.ShowAllData
+  'Sheets("DATA").ListObjects("Table1").Range.AutoFilter
+  
+'  Worksheets("Sheet2").ShowAllData
+
+End Sub
+
+
+Sub SORT()
+'
+' SORT Macro
+'
+' Keyboard Shortcut: Ctrl+Shift+F
+'
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Rows("6:6").Select
+    Range("D6").Activate
+    Application.CutCopyMode = False
+    Range("F6").Select
+    ActiveSheet.Range("$F$6:$J$23").AutoFilter field:=1
+    ActiveSheet.Range("$F$6:$J$23").AutoFilter field:=2
+    Range("H6").Select
+    ActiveSheet.Range("$F$6:$J$23").AutoFilter field:=3
+    ActiveSheet.Range("$F$6:$J$23").AutoFilter field:=5
+    Sheets("PRINT").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    ActiveSheet.Range("$F$6:$J$23").AutoFilter field:=2, Criteria1:="230"
+    Sheets("PATIENT DATA").Select
+    Range("H12:H23").Select
+    Sheets("PRINT").Select
+    ActiveCell.Offset(1, -3).Range("A1").Select
+    Sheets("PATIENT DATA").Select
+    Range("J12:J23").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PRINT").Select
+    Range("E8").Select
+    ActiveSheet.Paste
+    Application.CutCopyMode = False
+    With Selection.Validation
+        .Delete
+        .Add Type:=xlValidateList, AlertStyle:=xlValidAlertStop, Operator:= _
+        xlBetween, Formula1:="=$E$8:$E$19"
+        .IgnoreBlank = False
+        .InCellDropdown = True
+        .InputTitle = ""
+        .ErrorTitle = "Select correct format"
+        .InputMessage = ""
+        .ErrorMessage = ""
+        .ShowInput = True
+        .ShowError = True
+    End With
+    Range("E8").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    ActiveSheet.Range("$F$6:$J$23").AutoFilter field:=5, Criteria1:="LFT"
+    ActiveWindow.ScrollColumn = 5
+    ActiveWindow.ScrollColumn = 7
+    ActiveWindow.ScrollColumn = 8
+    ActiveWindow.ScrollColumn = 9
+    ActiveWindow.ScrollColumn = 10
+    ActiveWindow.ScrollColumn = 11
+    ActiveWindow.ScrollColumn = 13
+    ActiveWindow.ScrollColumn = 14
+    ActiveWindow.ScrollColumn = 15
+    ActiveWindow.ScrollColumn = 16
+    ActiveWindow.ScrollColumn = 17
+    ActiveWindow.ScrollColumn = 19
+    ActiveWindow.ScrollColumn = 20
+    ActiveWindow.ScrollColumn = 21
+    ActiveWindow.ScrollColumn = 22
+    ActiveWindow.ScrollColumn = 23
+    ActiveWindow.ScrollColumn = 25
+    ActiveWindow.ScrollColumn = 26
+    ActiveWindow.ScrollColumn = 27
+    Range("AG15:AO15").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("LFT").Select
+    Range("E21").Select
+    Selection.PasteSpecial Paste:=xlPasteAll, Operation:=xlNone, SkipBlanks:= _
+        False, Transpose:=True
+    Range("F21").Select
+End Sub
+Sub sreg()
+'
+' sreg Macro
+'
+
+'
+    Range("E6").Select
+    Sheets("PATIENT DATA").Select
+    ActiveSheet.Range("$G$6:$G$42").AutoFilter field:=1
+    Sheets("PRINT").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Range("G5").Select
+    ActiveSheet.Range("$G$6:$G$42").AutoFilter field:=1, Criteria1:="229"
+    Sheets("PRINT").Select
+    ActiveCell.Offset(0, -4).Range("A1").Select
+    Sheets("PATIENT DATA").Select
+    Range("H11").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PRINT").Select
+End Sub
+Sub searchreg()
+'
+' searchreg Macro
+'
+
+    Dim cellvalue As String
+    cellvalue = Range("e6")
+    ActiveCell.Offset(0, -4).Range("A1").Select
+    Range("E6").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    ActiveSheet.ListObjects("Table1").Range.AutoFilter field:=3, Criteria1:=cellvalue
+    Range("H:H").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PRINT").Select
+    ActiveCell.Offset(0, -4).Range("A1").Select
+    ActiveSheet.Paste
+    Range("E7").Select
+    Application.CutCopyMode = False
+    With Selection.Validation
+        .Delete
+        .Add Type:=xlValidateList, AlertStyle:=xlValidAlertStop, Operator:= _
+        xlBetween, Formula1:="=$A$6:$A$17"
+        .IgnoreBlank = True
+        .InCellDropdown = True
+        .InputTitle = ""
+        .ErrorTitle = "Select correct format"
+        .InputMessage = ""
+        .ErrorMessage = ""
+        .ShowInput = True
+        .ShowError = True
+    End With
+End Sub
+Sub searchname()
+'
+' searchreg Macro
+'
+
+    Dim cellvalue As String
+    Sheets("PRINT").Select
+    cellvalue = Range("e7")
+    MsgBox cellvalue
+    'ActiveCell.Offset(0, -4).Range("A1").Select
+    'Range("E7").Select
+   ' Selection.Copy
+    Sheets("PATIENT DATA").Select
+    ActiveSheet.ListObjects("Table1").Range.AutoFilter field:=4, Criteria1:=cellvalue
+    Range("j:j").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PRINT").Select
+    ActiveCell.Offset(0, -4).Range("A1").Select
+    ActiveSheet.Paste
+    Range("E7").Select
+    Application.CutCopyMode = False
+    With Selection.Validation
+        .Delete
+        .Add Type:=xlValidateList, AlertStyle:=xlValidAlertStop, Operator:= _
+        xlBetween, Formula1:="=$A$6:$A$17"
+        .IgnoreBlank = True
+        .InCellDropdown = True
+        .InputTitle = ""
+        .ErrorTitle = "Select correct format"
+        .InputMessage = ""
+        .ErrorMessage = ""
+        .ShowInput = True
+        .ShowError = True
+    End With
+End Sub
+
+
+
+
+Sub cbcprint()
+'
+' cbcprint Macro
+'
+' Keyboard Shortcut: Ctrl+g
+'
+    Sheets("PATIENT DATA").Select
+    Range("H13").Select
+    Selection.Copy
+    Sheets("CBC (2)").Select
+    Range("B12:D12").Select
+    Application.CutCopyMode = False
+    ActiveSheet.Unprotect
+    Sheets("PATIENT DATA").Select
+    Selection.Copy
+    Sheets("CBC (2)").Select
+    ActiveSheet.Paste
+    Sheets("CBC (2)").Select
+    ActiveCell.Offset(1, 0).Range("A1:C1").Select
+    Sheets("PATIENT DATA").Select
+    Range("I13").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("CBC (2)").Select
+    ActiveSheet.Paste
+    ActiveCell.Offset(1, 7).Range("A1").Select
+    Sheets("PATIENT DATA").Select
+    Range("G13").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("CBC (2)").Select
+    ActiveSheet.Paste
+    Application.CutCopyMode = False
+    With Selection
+        .HorizontalAlignment = xlLeft
+        .VerticalAlignment = xlCenter
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    ActiveCell.Offset(7, -4).Range("A1").Select
+    Sheets("PATIENT DATA").Select
+    Range("N13:AA13").Select
+    Selection.Copy
+    Sheets("CBC (2)").Select
+    Selection.PasteSpecial Paste:=xlPasteAll, Operation:=xlNone, SkipBlanks:= _
+        False, Transpose:=True
+    ActiveWindow.ScrollRow = 9
+    ActiveWindow.ScrollRow = 10
+    ActiveWindow.ScrollRow = 13
+    ActiveWindow.ScrollRow = 14
+    ActiveWindow.ScrollRow = 15
+    ActiveWindow.ScrollRow = 16
+    ActiveWindow.ScrollRow = 18
+    ActiveWindow.ScrollRow = 21
+    ActiveWindow.ScrollRow = 22
+    Range("E21:E34").Select
+    Range("E34").Activate
+    Range("E21:E34").Select
+    Range("E34").Activate
+    Application.CutCopyMode = False
+    Selection.ClearFormats
+    With Selection
+        .HorizontalAlignment = xlLeft
+        .VerticalAlignment = xlBottom
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    Range("G35").Select
+End Sub
+
+
+
+
+Sub rough()
+'
+' ANY_REPORT Macro
+'
+
+'
+ Set lo = Sheet2.ListObjects("table1")
+    lo.AutoFilter.ShowAllData
+    Sheets("PATIENT DATA").Select
+    Range("Table1[[#Headers],[Date]]").Select
+    Selection.End(xlDown).Select
+    ActiveCell.Offset(1, 0).Range("A1").Select
+    Sheets("rough work").Select
+    ActiveWindow.SmallScroll down:=-6
+    Range("c15:f15").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("ANY REPORT").Select
+    Range("I14").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("rough work").Select
+    Range("B12:D12").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("rough work").Select
+    Range("B13:D13").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("rough work").Select
+    Range("B19").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+    Selection.ClearFormats
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    ActiveCell.Offset(0, 64).Range("A1").Select
+    
+    Sheets("rough work").Select
+    ActiveWindow.SmallScroll down:=6
+    Range("B18:E38").Select
+    Selection.ColumnDifferences(ActiveCell).Select
+    'Columns("B").ColumnDifferences(Range("b20")).Select
+    '    Selection.SpecialCells(xlCellTypeConstants, 23).Select
+   ' Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteAll, Operation:=xlNone, SkipBlanks:= _
+        False, Transpose:=True
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    
+    Range("Table1[[#Headers],[Date]]").Select
+    Selection.End(xlDown).Select
+    ActiveCell.Offset(1, 0).Range("A1").Select
+    Sheets("rough work").Select
+    ActiveWindow.SmallScroll down:=-6
+    Range("E15:G15").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("rough work").Select
+    Range("I14").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("rough work").Select
+    Range("B12:D12").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("rough work").Select
+    Range("B13:D13").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("rough work").Select
+    Range("B19").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+    Selection.ClearFormats
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    ActiveCell.Offset(0, 64).Range("A1").Select
+    
+    Sheets("rough work").Select
+    ActiveCell.Offset(8, 5).Range("A1").Select
+    Application.CutCopyMode = False
+    
+      Dim path As String
+path = "C:\Users\ManiKandan\Desktop\New folder\clinic\reports\"
+
+Dim regno As String
+regno = Range("i14")
+
+Dim filename1 As String
+filename1 = regno & "-" & Range("b12").Text & "-" & Range("b19")
+Application.DisplayAlerts = False
+ActiveSheet.Copy
+
+'ActiveSheet.Shapes("commandbutton1").Delete
+'pdf
+'ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+'xlsx
+Application.DisplayAlerts = False
+
+With ActiveWorkbook
+   '.SaveAs Filename:=path & filename1 & ".xlsx", FileFormat:=51
+   ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+
+   .Close
+End With
+'MsgBox "your next document no " & regno + 1
+'Range("i13") = regno + 1
+ThisWorkbook.SAVE
+    
+    ActiveWorkbook.ActiveSheet.PrintPreview
+End Sub
+
+Sub HYPERLINK()
+
+Dim path As String
+path = "file:///C:\Users\ManiKandan\Desktop\New folder\clinic\reports\"
+ActiveSheet.Select
+Dim regno As String
+regno = Range("i14")
+
+Dim filename1 As String
+filename1 = regno & "-" & Range("b12").Text & "-" & Range("A19")
+Filename = path & filename1
+'MsgBox (Filename)
+With Worksheets(6)
+Sheets("PATIENT DATA").Select
+    Range("Table1[[#Headers],[Date]]").Select
+    Selection.End(xlDown).Select
+    ActiveCell.Offset(0, 6).Range("A1").Select
+ .Hyperlinks.Add Anchor:=Selection, _
+ Address:=Filename, _
+ ScreenTip:="pdf file report", _
+ TextToDisplay:="PDF_click_here"
+End With
+End Sub
+
+Sub CreateFolder()
+
+If Dir("C:\Users\ManiKandan\Desktop\New folder\clinic\reports", vbDirectory) = "" Then
+          MkDir "C:\Users\ManiKandan\Desktop\New folder\clinic"
+          retVal = Shell("explorer.exe C:\Users\ManiKandan\Desktop\New folder\clinic\reports", vbNormalFocus)
+     Else
+          'retVal = Shell("explorer.exe C:\Users\ManiKandan\Desktop\New folder\clinic\reports", vbNormalFocus)
+End If
+End Sub
+
+Sub immunology()
+'
+' immunology Macro
+'
+
+    Set lo = Sheet2.ListObjects(1)
+    lo.AutoFilter.ShowAllData
+    Sheets("PATIENT DATA").Select
+    Range("Table1[[#Headers],[Date]]").Select
+    Selection.End(xlDown).Select
+    ActiveCell.Offset(1, 0).Range("A1").Select
+    Sheets("IMMUNOLOGY").Select
+    ActiveWindow.SmallScroll down:=-6
+    Range("c15:f15").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("IMMUNOLOGY").Select
+    Range("I14").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("IMMUNOLOGY").Select
+    Range("B12:D12").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("IMMUNOLOGY").Select
+    Range("B13:D13").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("IMMUNOLOGY").Select
+    Range("C19").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+    Selection.ClearFormats
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    ActiveCell.Offset(0, 64).Range("A1").Select
+    
+    Sheets("IMMUNOLOGY").Select
+    ActiveWindow.SmallScroll down:=6
+    Range("B21:H38").Select
+    ActiveWindow.SmallScroll down:=-12
+    Selection.SpecialCells(xlCellTypeConstants, 23).Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteAll, Operation:=xlNone, SkipBlanks:= _
+        False, Transpose:=True
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    
+    Range("Table1[[#Headers],[Date]]").Select
+    Selection.End(xlDown).Select
+    ActiveCell.Offset(1, 0).Range("A1").Select
+    Sheets("IMMUNOLOGY").Select
+    ActiveWindow.SmallScroll down:=-6
+    Range("E15:G15").Select
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("IMMUNOLOGY").Select
+    Range("I14").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("IMMUNOLOGY").Select
+    Range("B12:D12").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("IMMUNOLOGY").Select
+    Range("B13:D13").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    Sheets("IMMUNOLOGY").Select
+    Range("E19").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("PATIENT DATA").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+    Selection.ClearFormats
+    ActiveCell.Offset(0, 1).Range("A1").Select
+    ActiveCell.Offset(0, 64).Range("A1").Select
+    
+    Sheets("IMMUNOLOGY").Select
+    ActiveCell.Offset(8, 5).Range("A1").Select
+    Application.CutCopyMode = False
+    
+      Dim path As String
+path = "C:\Users\ManiKandan\Desktop\New folder\clinic\reports\"
+
+Dim regno As String
+regno = Range("i14")
+
+Dim filename1 As String
+filename1 = regno & "-" & Range("b12").Text & "-" & Range("C19")
+Application.DisplayAlerts = False
+ActiveSheet.Copy
+
+'ActiveSheet.Shapes("commandbutton1").Delete
+'pdf
+'ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+'xlsx
+Application.DisplayAlerts = False
+
+With ActiveWorkbook
+   '.SaveAs Filename:=path & filename1 & ".xlsx", FileFormat:=51
+   ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+
+   .Close
+End With
+'MsgBox "your next document no " & regno + 1
+'Range("i13") = regno + 1
+ThisWorkbook.SAVE
+    
+    ActiveWorkbook.ActiveSheet.PrintPreview
+End Sub
+
+
+Sub lftrftlipid()
+
+ Dim path As String
+path = "C:\Users\ManiKandan\Desktop\New folder\clinic\reports\"
+
+Dim regno As String
+regno = Range("i14")
+
+Dim filename1 As String
+filename1 = regno & "-" & Range("b12").Text & "-" & Range("E18")
+Application.DisplayAlerts = False
+ActiveSheet.Copy
+
+'ActiveSheet.Shapes("commandbutton2").Delete
+'pdf
+'ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+'xlsx
+Application.DisplayAlerts = False
+
+With ActiveWorkbook
+   '.SaveAs Filename:=path & filename1 & ".xlsx", FileFormat:=51
+   ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, ignoreprintareas:=False, Filename:=path & filename1
+
+   .Close
+End With
+'MsgBox "your next document no " & regno + 1
+'Range("i13") = regno + 1
+ThisWorkbook.SAVE
+
+Application.DisplayAlerts = True
+    
+    ActiveWorkbook.ActiveSheet.PrintPreview
+End Sub
+
+
+
