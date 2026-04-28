@@ -1,12 +1,12 @@
 # CBC-BIO-CHEMISTRY-REPORT
 
- It is the simple exel vba bassed project for HOSPITAL'S LABORATORY REPORT GENERATOR 
+HOSPITAL'S LABORATORY REPORT GENERATOR 
   it's having lots of cababilities like
          1 generating report by simple input field provided 
          2 Billing 
          3 patinet data maintenace 
          4 retrieval
-         5 accessing patient report by clicking hyperlink generated for that particular patient report
+         5 accessing patient reports
          6 reg no generation and time stamp 
           IN HOSPITAL SETUP NORMAL REPORT 
            LIKE
