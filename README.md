@@ -23,4 +23,7 @@ HOSPITAL'S LABORATORY REPORT GENERATOR
            8 CARD TEST LIKE HBSAg
            9 HIV1/2
            10 MALARIA IgG/IgM andso on.
+
+
+Back End Integrated via through java SpringBoot Hibernate for data base operations PostgreSQL for sotring data locally 
           
