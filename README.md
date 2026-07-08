@@ -25,5 +25,5 @@ HOSPITAL'S LABORATORY REPORT GENERATOR
            10 MALARIA IgG/IgM andso on.
 
 
-Back End Integrated via through java SpringBoot Hibernate for data base operations PostgreSQL for sotring data locally 
+Back End Integrated via through java SpringBoot Hibernate for data base operations PostgreSQL for sotring data locally
           
