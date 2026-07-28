@@ -29,7 +29,7 @@ A comprehensive **Hospital Laboratory Information System (LIS)** built with **VB
 ## 📂 Database Schema Highlights
 - **Patients** → Registration number, demographics, contact info  
 - **Reports** → CBC, LFT, RFT, etc. linked to patient ID  
-- **Billing** → Test charges, invoices, payment tracking  
+- **Billing** → Test charges, invoices, 
  
 
 ---
